@@ -5,6 +5,7 @@ import libraryapi.apigee.exception.LibraryResourceNotFoundException;
 import libraryapi.apigee.util.LibraryApiUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -72,9 +73,20 @@ public class PublisherService {
         }
     }
 
+    public void deletePublisher(Integer publisherId) throws LibraryResourceNotFoundException {
+        try{
+            publisherRepository.deleteById(publisherId);
+        }catch(EmptyResultDataAccessException e){
+            throw new LibraryResourceNotFoundException("Publisher Id:"+ publisherId+" Not found");
+        }
+
+    }
+
+
     private Publisher createPublisherFromEntity(PublisherEntity pe) {
         return new Publisher(pe.getPublisherId(),pe.getName(),pe.getEmailId(),pe.getPhoneNumber());
     }
+
 
 
 }
