@@ -2,6 +2,7 @@ package libraryapi.apigee.publisher;
 
 import libraryapi.apigee.exception.LibraryResourceAlreadyExistsException;
 import libraryapi.apigee.exception.LibraryResourceNotFoundException;
+import libraryapi.apigee.util.LibraryApiUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
@@ -53,7 +54,27 @@ public class PublisherService {
         return publisher;
     }
 
+    public void updatePublisher(Publisher publisherToBeUpdated) throws LibraryResourceNotFoundException {
+        Optional<PublisherEntity> publisherEntity = publisherRepository.findById(publisherToBeUpdated.getPublisherId());
+        Publisher publisher = null;
+        if(publisherEntity.isPresent()){
+            PublisherEntity pe = publisherEntity.get();
+            if(LibraryApiUtils.doesStringValueExist(publisherToBeUpdated.getEmailId())){
+                pe.setEmailId(publisherToBeUpdated.getEmailId());
+            }
+            if(LibraryApiUtils.doesStringValueExist(publisherToBeUpdated.getPhoneNumber())){
+                pe.setPhoneNumber(publisherToBeUpdated.getPhoneNumber());
+            }
+            publisherRepository.save(pe);
+            publisherToBeUpdated = createPublisherFromEntity(pe);
+        }else{
+            throw new LibraryResourceNotFoundException("Publisher Id: "+publisherToBeUpdated.getPublisherId()+" Not found");
+        }
+    }
+
     private Publisher createPublisherFromEntity(PublisherEntity pe) {
         return new Publisher(pe.getPublisherId(),pe.getName(),pe.getEmailId(),pe.getPhoneNumber());
     }
+
+
 }
