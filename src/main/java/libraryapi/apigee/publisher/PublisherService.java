@@ -3,6 +3,8 @@ package libraryapi.apigee.publisher;
 import libraryapi.apigee.exception.LibraryResourceAlreadyExistsException;
 import libraryapi.apigee.exception.LibraryResourceNotFoundException;
 import libraryapi.apigee.util.LibraryApiUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -20,7 +22,9 @@ import java.util.stream.Collectors;
 @Service
 public class PublisherService {
 
-    @Autowired
+    private static Logger logger = LoggerFactory.getLogger(PublisherService.class);
+
+
     private PublisherRepository publisherRepository;
 
     public PublisherService(PublisherRepository publisherRepository) {
@@ -29,6 +33,8 @@ public class PublisherService {
 
     public void addPublisher(Publisher publisherToBeAdded, String traceId)
                     throws LibraryResourceAlreadyExistsException {
+
+        logger.debug("TraceId: {} , Request to add Publisher: {}",traceId,publisherToBeAdded);
 
         PublisherEntity publisherEntity = new PublisherEntity(
                 publisherToBeAdded.getName(),
@@ -41,9 +47,11 @@ public class PublisherService {
         try {
             addedPublisher = publisherRepository.save(publisherEntity);
         }catch(DataIntegrityViolationException e){
+            logger.error("TraceId: {}, Publisher already exists!!!",traceId,e);
             throw new LibraryResourceAlreadyExistsException("TraceId: "+ traceId+", Publisher already exists!!!");
         }
         publisherToBeAdded.setPublisherId(addedPublisher.getPublisherId());
+        logger.info("TraceId: {},Publisher added: {} ",traceId,publisherToBeAdded);
     }
 
     public Publisher getPublisher(Integer publisherId, String traceId) throws LibraryResourceNotFoundException {
