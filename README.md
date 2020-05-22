@@ -22,3 +22,9 @@ Create a new user with a password. This user will be used to connect from our ap
 Give all the privileges to the new libraryUser on the newly created database library_db
 
 	GRANT ALL ON library_db.* TO 'springuser'@'%'; 	
+
+##LOGS
+
+create log file(library-apis) under the following location :
+
+C:\tmp\logs\library-apis
