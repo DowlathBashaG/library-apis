@@ -22,6 +22,9 @@ public class PublisherEntity {
     @Column(name="Email_Id")
     private String emailId;
 
+    @Column(name="Phone_Number")
+    private String phoneNumber;
+
     public PublisherEntity() {
     }
 
@@ -58,10 +61,4 @@ public class PublisherEntity {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-
-    @Column(name="Phone_Number")
-    private String phoneNumber;
-
-
-
 }
