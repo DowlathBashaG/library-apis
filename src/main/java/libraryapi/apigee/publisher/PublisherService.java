@@ -41,7 +41,7 @@ public class PublisherService {
         try {
             addedPublisher = publisherRepository.save(publisherEntity);
         }catch(DataIntegrityViolationException e){
-            throw new LibraryResourceAlreadyExistsException("TraceId: "+ traceId+", Publisherd already exists!!!");
+            throw new LibraryResourceAlreadyExistsException("TraceId: "+ traceId+", Publisher already exists!!!");
         }
         publisherToBeAdded.setPublisherId(addedPublisher.getPublisherId());
     }
