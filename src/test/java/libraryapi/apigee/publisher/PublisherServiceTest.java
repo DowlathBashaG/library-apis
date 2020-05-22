@@ -153,7 +153,7 @@ public class PublisherServiceTest {
            for ignore error TestConstants.API_TRACE_ID check once and updat for the same. (then resolve the error). */
 
         verify(publisherRepository,times(1))
-                   .findByNameContaining(TestConstants.API_TRACE_ID);
+                   .findByNameContaining(TestConstants.TEST_PUBLISHER_NAME);
 
        // assertEquals(publisherEntityList.size(),publishers.size());
 
