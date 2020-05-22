@@ -2,17 +2,19 @@ package libraryapi.apigee.exception;
 
 /**
  * @Author Dowlath
- * @create 5/21/2020 11:36 AM
+ * @create 5/22/2020 3:23 PM
  */
-public class LibraryResourceNotFoundException extends Exception{
+public class LibraryResourceBadRequestException extends Exception{
 
     private String traceId;
 
-    public LibraryResourceNotFoundException(String traceId,String message){
+    public LibraryResourceBadRequestException(String traceId,String message) {
         super(message);
         this.traceId = traceId;
     }
+
     public String getTraceId(){
         return traceId;
     }
+
 }
