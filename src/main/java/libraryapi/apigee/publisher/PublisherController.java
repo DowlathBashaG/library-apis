@@ -3,6 +3,8 @@ package libraryapi.apigee.publisher;
 import libraryapi.apigee.exception.LibraryResourceAlreadyExistsException;
 import libraryapi.apigee.exception.LibraryResourceNotFoundException;
 import libraryapi.apigee.util.LibraryApiUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +21,8 @@ import java.util.UUID;
 @RequestMapping(path="/v1/{publishers}")
 public class PublisherController {
 
-    @Autowired
+    private static Logger logger = LoggerFactory.getLogger(PublisherController.class);
+
     private PublisherService publisherService;
 
     public PublisherController(PublisherService publisherService) {
@@ -49,17 +52,19 @@ public class PublisherController {
     @PostMapping
     public ResponseEntity<?> addPublisher(@Valid @RequestBody Publisher publisher,
                                           @RequestHeader(value="Trace-Id",defaultValue = " ") String traceId){
-
+        logger.debug("Request to add Publisher: {}",traceId,publisher);
         if(!LibraryApiUtils.doesStringValueExist(traceId)){
             traceId = UUID.randomUUID().toString();
 
         }
+        logger.debug("Added TraceId: {}" ,traceId);
         try {
             publisherService.addPublisher(publisher,traceId);
         }
         catch(LibraryResourceAlreadyExistsException e){
             return new ResponseEntity<>(e.getMessage(), HttpStatus.CONFLICT);
         }
+        logger.debug("Returning response for TraceId: {}" ,traceId);
         return new ResponseEntity<>(publisher,HttpStatus.CREATED);
     }
 
