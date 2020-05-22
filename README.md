@@ -23,7 +23,7 @@ Give all the privileges to the new libraryUser on the newly created database lib
 
 	GRANT ALL ON library_db.* TO 'springuser'@'%'; 	
 
-##LOGS
+## LOGS
 
 create log file(library-apis) under the following location :
 
