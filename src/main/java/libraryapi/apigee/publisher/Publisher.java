@@ -37,12 +37,6 @@ public class Publisher {
         this.phoneNumber = phoneNumber;
     }
 
-    public Publisher(String name, String emailId, String phoneNumber) {
-        this.name = name;
-        this.emailId = emailId;
-        this.phoneNumber = phoneNumber;
-    }
-
     public Integer getPublisherId() {
         return publisherId;
     }
