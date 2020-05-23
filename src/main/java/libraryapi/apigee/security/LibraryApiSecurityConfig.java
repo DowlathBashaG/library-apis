@@ -1,0 +1,41 @@
+package libraryapi.apigee.security;
+
+import org.springframework.http.HttpMethod;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+
+/**
+ * @Author Dowlath
+ * @create 5/23/2020 9:28 PM
+ */
+@EnableWebSecurity
+public class LibraryApiSecurityConfig extends WebSecurityConfigurerAdapter {
+    private UserDetailsServiceImpl userDetailsService;
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
+    public LibraryApiSecurityConfig(UserDetailsServiceImpl userDetailsService,
+                                    BCryptPasswordEncoder bCryptPasswordEncoder){
+        this.userDetailsService = userDetailsService;
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+    }
+
+    public void configure(AuthenticationManagerBuilder auth) throws Exception{
+         auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder);
+    }
+
+    protected void configure(HttpSecurity httpSecurity) throws Exception{
+      httpSecurity.cors().and().csrf().disable().authorizeRequests()
+              .antMatchers(HttpMethod.POST, SecurityConstants.NEW_USER_REGISTRATION_URL).permitAll()
+              .antMatchers(HttpMethod.GET,"/v1/users/search").permitAll()
+              .antMatchers(HttpMethod.GET,"/v1/books/search").permitAll()
+              .anyRequest().authenticated()
+              .and()
+              .addFilter(new JwtAuthenticationFilter(authenticationManager()))
+              .addFilter(new JwtAuthorizationFilter(authenticationManager()))
+              .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+    }
+}
