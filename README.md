@@ -9,17 +9,25 @@ Project for developing APIs using REST,Apigee,SpringBoot and
 
 - LIST OF TABLES
 
-
 ![all TABLES](https://user-images.githubusercontent.com/9671419/82833511-cba78000-9edb-11ea-926e-aeec600c0dcd.PNG)
+
+USER TABLE :
 
 ![User Table](https://user-images.githubusercontent.com/9671419/82833535-da8e3280-9edb-11ea-973c-546d4dacd20d.PNG)
 
-![sequence tabke](https://user-images.githubusercontent.com/9671419/82833516-cf3b0700-9edb-11ea-8474-e3bbbc944990.PNG)
+AUTHOR & PUBLISHER TABLE :
 
+![Author_Publisher_TABLE](https://user-images.githubusercontent.com/9671419/82833699-6ef89500-9edc-11ea-876f-65c4d6523a9d.PNG
 
-![Author_Publisher_TABLE](https://user-images.githubusercontent.com/9671419/82833699-6ef89500-9edc-11ea-876f-65c4d6523a9d.PNG)
+BOOK TABLE :
 
 ![Book Table](https://user-images.githubusercontent.com/9671419/82833706-761fa300-9edc-11ea-8149-499d95036be3.PNG)
+
+SEQUENCE TABLE :
+
+![sequence tabke](https://user-images.githubusercontent.com/9671419/82833516-cf3b0700-9edb-11ea-8474-e3bbbc944990.PNG)
+
+JOIN TABLES :
 
 ![JOIN_TABLES](https://user-images.githubusercontent.com/9671419/82833723-7f107480-9edc-11ea-999c-6ad3deeebee5.PNG)
 
