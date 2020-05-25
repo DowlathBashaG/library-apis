@@ -3,13 +3,13 @@ Project for developing APIs using REST,Apigee,SpringBoot and
 
 ## DATABASE
 
+One Publisher can have many books , but book have only one publisher. [  One to Many ] 
+
+Many Users can have many Books, Many Books can have many Users. [ Many to Many ]  create different table  :  USER_BOOK 
+
+Many Authors can have many Books, Many Books can have many Authors.  [ Many to Many ]  create different table : BOOK_AUTHOR 
+
 - ERD
-
--- One Publisher can have many books , but book have only one publisher.   [  One to Many ] 
-
--- Many Users can have many Books, Many Books can have many Users.      [ Many to Many   -> create different table  :  USER_BOOK
-
--- Many Authors can have many Books, Many Books can have many Authors.  [ Many to Many ]  -> create different table : BOOK_AUTHOR 
 
 ![ERD](https://user-images.githubusercontent.com/9671419/82833367-68b5e900-9edb-11ea-8c58-031605ae9c1f.PNG)
 
