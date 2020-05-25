@@ -17,6 +17,12 @@ Project for developing APIs using REST,Apigee,SpringBoot and
 ![sequence tabke](https://user-images.githubusercontent.com/9671419/82833516-cf3b0700-9edb-11ea-8474-e3bbbc944990.PNG)
 
 
+![Author_Publisher_TABLE](https://user-images.githubusercontent.com/9671419/82833699-6ef89500-9edc-11ea-876f-65c4d6523a9d.PNG)
+
+![Book Table](https://user-images.githubusercontent.com/9671419/82833706-761fa300-9edc-11ea-8149-499d95036be3.PNG)
+
+![JOIN_TABLES](https://user-images.githubusercontent.com/9671419/82833723-7f107480-9edc-11ea-999c-6ad3deeebee5.PNG)
+
 
 Start the DB
 
