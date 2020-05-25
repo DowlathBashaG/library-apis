@@ -7,7 +7,9 @@ One Publisher can have many books , but book have only one publisher. [  One to 
 
 Many Users can have many Books, Many Books can have many Users. [ Many to Many ]  create different table  :  USER_BOOK 
 
-Many Authors can have many Books, Many Books can have many Authors.  [ Many to Many ]  create different table : BOOK_AUTHOR 
+Many Authors can have many Books, Many Books can have many Authors.  [ Many to Many ]  create different table : BOOK_AUTHOR
+
+
 
 
 - ERD
