@@ -18,8 +18,6 @@ Project for developing APIs using REST,Apigee,SpringBoot and
 
 
 
-
-
 Start the DB
 
 Start MySQL Workbench
