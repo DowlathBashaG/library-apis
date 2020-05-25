@@ -7,6 +7,8 @@ Project for developing APIs using REST,Apigee,SpringBoot and
 
 ![ERD](https://user-images.githubusercontent.com/9671419/82833367-68b5e900-9edb-11ea-8c58-031605ae9c1f.PNG)
 
+- LIST OF TABLES
+
 
 Start the DB
 
