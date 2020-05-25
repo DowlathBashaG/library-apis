@@ -1,5 +1,10 @@
 # library-apis
-Project for developing APIs using REST,Apigee,SpringBoot and MySQL
+Project for developing APIs using REST,Apigee,SpringBoot and 
+
+# DATABASE
+
+## ERD
+
 
 Start the DB
 
