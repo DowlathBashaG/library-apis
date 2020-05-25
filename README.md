@@ -32,6 +32,8 @@ JOIN TABLES :
 ![JOIN_TABLES](https://user-images.githubusercontent.com/9671419/82833723-7f107480-9edc-11ea-999c-6ad3deeebee5.PNG)
 
 
+
+
 Start the DB
 
 Start MySQL Workbench
