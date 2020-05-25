@@ -10,6 +10,20 @@ Project for developing APIs using REST,Apigee,SpringBoot and
 - LIST OF TABLES
 
 
+![Tables](https://user-images.githubusercontent.com/9671419/82833507-c77b6280-9edb-11ea-9aae-386d77977b9a.PNG)
+
+![all TABLES](https://user-images.githubusercontent.com/9671419/82833511-cba78000-9edb-11ea-926e-aeec600c0dcd.PNG)
+
+![User Table](https://user-images.githubusercontent.com/9671419/82833535-da8e3280-9edb-11ea-973c-546d4dacd20d.PNG)
+
+![User Table](https://user-images.githubusercontent.com/9671419/82833555-ebd73f00-9edb-11ea-96b7-ae4c3b0b5caf.PNG)
+
+![sequence tabke](https://user-images.githubusercontent.com/9671419/82833516-cf3b0700-9edb-11ea-8474-e3bbbc944990.PNG)
+
+
+
+
+
 Start the DB
 
 Start MySQL Workbench
