@@ -17,7 +17,7 @@ USER TABLE :
 
 AUTHOR & PUBLISHER TABLE :
 
-![Author_Publisher_TABLE](https://user-images.githubusercontent.com/9671419/82833699-6ef89500-9edc-11ea-876f-65c4d6523a9d.PNG
+![Author_Publisher_TABLE](https://user-images.githubusercontent.com/9671419/82833927-1b3a7b80-9edd-11ea-8b5e-b09e2d2da62c.PNG)
 
 BOOK TABLE :
 
